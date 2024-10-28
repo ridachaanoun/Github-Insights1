@@ -1,0 +1,45 @@
+header {
+  height: 85px;
+}
+
+.repos-stats,
+.languages-stats {
+  height: 100px;
+}
+
+.my-name,
+.my-user-name,
+.my-bio {
+  padding-bottom: 10px;
+}
+
+.member-duration {
+  padding-bottom: 10px;
+}
+
+.repo-title {
+  color: #4f9de9;
+  text-decoration: underline;
+}
+
+.repos-by-language-title {
+  position: relative;
+  bottom: 70px;
+}
+
+.header-user-titles {
+  margin: 0 10px;
+}
+
+.profile-insights {
+  margin: 76vh 0 0 48vw;
+}
+
+.line-chart,
+.pie-chart {
+  height: auto;
+}
+
+.back-to-top {
+  margin-bottom: 10px;
+}

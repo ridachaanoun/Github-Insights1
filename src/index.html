@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Github Insights</title>
+  </head>
+
+  <body class="flex justify-evenly bg-bodycolor text-white">
+    <aside
+      class="fixed left-12 top-9 flex flex-col w-[20vw] h-[90vh] bg-asidecolor rounded-2xl pt-5 pb-12 pl-6 pr-6"
+    >
+      <img id="avatar" alt="Profile" class="w-[100px] rounded-full" />
+
+      <img id="my-flag" src="" alt="india flag" class="w-8" />
+
+      <h1 id="name" class="font-normal text-xl"></h1>
+      <p id="username"></p>
+      <p id="bio"></p>
+      <div
+        class="aside-stats flex flex-col w-[100%] bg-cardscolor rounded-2xl pt-2 pb-10 pl-5 pr-5"
+      >
+        <p id="followers" class="mt-3"></p>
+        <p id="following" class="mt-3"></p>
+        <p id="repos" class="repos-count mt-3 mb-5"></p>
+      </div>
+
+      <p
+        id="membership-duration"
+        class="member-duration h-[50px] bg-cardscolor text-center rounded-2xl pt-3 mt-7"
+      ></p>
+    </aside>
+
+    <main class="flex w-[100vw] h-[100vh] ml-[37vw] pt-10">
+      <section class="flex flex-col w-[45vw] h-[100vh]">
+        <header
+          class="flex justify-center items-center bg-asidecolor text-bigfont font-bold rounded-2xl px-14 py-4 gap-5"
+        >
+          <a id="homePageLink" class="cursor-pointer"
+            ><img src="icons/github.svg" alt="github icon" class="w-12"
+          /></a>
+          <h2 class="insights-title">
+            <a id="userReposLink" class="cursor-pointer">Github Insights</a>
+          </h2>
+        </header>
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search..."
+          class="search-input bg-bodycolor text-slate-300 rounded-xl border-2 border-gray-500 mt-6 px-6 py-2"
+        />
+        <div class="suggestions-container">
+          <ul id="suggestions-list"></ul>
+        </div>
+
+        <!-- grid / hidden  switch -->
+        <div
+          id="reposGrid"
+          class="profile-repos grid grid-cols-2 gap-5 rounded-2xl mt-7"
+        ></div>
+
+        <div id="insightsGrid" class="user-page hidden">
+          <header
+            class="user-header flex justify-center items-center w-[100%] bg-asidecolor text-center rounded-2xl mt-6"
+          >
+            <img
+              id="users-avatar"
+              src=""
+              alt="user avatar"
+              class="w-[50px] h-[50px] rounded-full"
+            />
+            <div class="header-user-titles">
+              <h3 id="usersNameHeader" class="user-name"></h3>
+              <p id="user-title"></p>
+            </div>
+
+            <img id="users-flag" src="" alt="country flag" class="flag w-12" />
+          </header>
+
+          <div class="user-stats grid grid-cols-2 gap-5 rounded-2xl mt-7">
+            <article class="repos-stats bg-asidecolor rounded-2xl">
+              <h4 id="usersNameStats" class="repos-stats-title"></h4>
+              <p id="usersReposStats" class="repos-stats-count"></p>
+            </article>
+
+            <article class="languages-stats bg-asidecolor rounded-2xl">
+              <h4 class="languages-stats-title">Number of Languages Used:</h4>
+              <p id="languagesCount" class="languages-stats-count"></p>
+            </article>
+
+            <article
+              class="bar-chart flex flex-col justify-center bg-asidecolor rounded-2xl"
+            >
+              <h4 class="repos-by-language-title">
+                Number of Repos by Languages:
+              </h4>
+              <canvas id="myBarsChart"></canvas>
+            </article>
+
+            <article
+              class="pie-chart flex flex-col items-center bg-asidecolor rounded-2xl"
+            >
+              <h4 class="most-used-languages-title">Most Used Languages:</h4>
+              <canvas id="myPieChart"></canvas>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="profile-insights fixed flex flex-col items-center">
+        <a href="#"
+          ><img
+            src="icons/arrow.svg"
+            alt="back-to-top button"
+            class="back-to-top bg-cardscolor rounded-full"
+        /></a>
+        <a
+          id="insights-btn"
+          class="profile-insights-p w-[100px] bg-cardscolor text-center rounded-xl cursor-pointer"
+        >
+          Profile <br />Insights
+        </a>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "tailwindcss build src/input.css -o dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
